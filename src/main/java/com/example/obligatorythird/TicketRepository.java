@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -12,8 +13,9 @@ public class TicketRepository {
     @Autowired
     private JdbcTemplate db;
 
+    @PostMapping
     public void saveTicket (Ticket innTicket){
-        String sql = "INSERT INTO TICKET (movies, firstName, lastName, phoneNumber, email, amount) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO Ticket (movies, firstName, lastName, phoneNumber, email, amount) VALUES (?,?,?,?,?,?)";
         db.update(sql, innTicket.getMovies(), innTicket.getFirstName(), innTicket.getLastName(), innTicket.getPhoneNumber(), innTicket.getEmail(), innTicket.getAmount());
     }
 

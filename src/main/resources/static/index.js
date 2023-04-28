@@ -32,7 +32,7 @@ function formatData(allTickets){
         "<th>Phone number</th><th>Email</th><th>Amount</th>" + "</tr>";
 
     for (const ticket of allTickets){
-        out += "<td>" + ticket.movies + "</td> <td>" + ticket.firstName + "</td><td>" + ticket.lastName + "</td>" +
+        out += "<td>" + ticket.movies + "</td> +" + " <td>" + ticket.firstName + "</td><td>" + ticket.lastName + "</td>" +
             "<td>" + ticket.phoneNumber + "</td><td>" + ticket.email + "</td><td>" + ticket.amount + "</td>";
     }
 
